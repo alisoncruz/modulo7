@@ -16,7 +16,12 @@ public class ContaPoupanca extends Conta {
 
 	@Override
 	public double getSaldo() {
+		if(ehDiaAniversario()) {
 		return super.saldo + taxaJuros * super.saldo;
+		} else {
+			return super.saldo;
+		}
+	
 	}
 
 	public LocalDate getDiaAniversario() {
@@ -69,6 +74,6 @@ public class ContaPoupanca extends Conta {
 	@Override
 	public String toString() {
 		return super.toString() + ", taxaJuros=" + this.taxaJuros + ", diaAniversario="
-				+ getDiaAniversario(diaAniversario) + "/" + getMesAniversario(diaAniversario) +", saldo="+ this.saldo;
+				+ getDiaAniversario(diaAniversario) + "/" + getMesAniversario(diaAniversario) +", saldo="+ this.getSaldo();
 	}
 }

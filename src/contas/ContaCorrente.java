@@ -36,7 +36,7 @@ private double chequeEspecial;
 	}
 	
 	private boolean saldoInsuficiente(double valor) {
-		return super.saldo == 0.0 || valor > super.saldo + this.chequeEspecial;
+		return super.saldo == 0.0 || valor > getSaldo();
 	}
 	
 	@Override
